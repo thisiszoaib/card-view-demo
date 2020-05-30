@@ -1,20 +1,22 @@
 <mat-toolbar color="primary">
   Card view demo
 </mat-toolbar>
-<div class="content" fxLayout="row wrap" fxLayoutGap="16px">
-  <mat-card fxFlex="0 1 calc(25% - 16px)" class="mat-elevation-z4" *ngFor="let num of [1,2,3,4,5,6,7]">
-    <mat-card-header>
-      <mat-card-title>Mountains {{num}}</mat-card-title>
-    </mat-card-header>
-    <img mat-card-image src="./../assets/images/mountains.jpg">
-    <mat-card-content>
-      <p>
-        The Himalayas is a mountain range in Asia.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+  <div fxFlex="25%" *ngFor="let num of [1,2,3,4,5,6,7]">
+    <mat-card class="mat-elevation-z4" >
+      <mat-card-header>
+        <mat-card-title>Mountains {{num}}</mat-card-title>
+      </mat-card-header>
+      <img mat-card-image src="./../assets/images/mountains.jpg">
+      <mat-card-content>
+        <p>
+          The Himalayas is a mountain range in Asia.
+        </p>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>LIKE</button>
+        <button mat-button>SHARE</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
 </div>
