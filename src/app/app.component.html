@@ -1,8 +1,12 @@
 <mat-toolbar color="primary">
-  Card view demo
+  <span>Card view demo</span>
+  <button mat-button (click)="toggleGridColumns()" fxHide.lt-md>
+    <span *ngIf="gridColumns === 4">Three Columns</span>
+    <span *ngIf="gridColumns === 3">Four Columns</span>
+  </button>
 </mat-toolbar>
 <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
-  <div fxFlex="25%" *ngFor="let num of [1,2,3,4,5,6,7]">
+  <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let num of [1,2,3,4,5,6,7]">
     <mat-card class="mat-elevation-z4" >
       <mat-card-header>
         <mat-card-title>Mountains {{num}}</mat-card-title>
